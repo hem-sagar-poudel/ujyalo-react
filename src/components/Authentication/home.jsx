@@ -28,12 +28,12 @@ export default function Home() {
                     <img src={require('./nepal.jpg')} alt="Background" className="w-full h-auto" style={{ maxHeight: "85vh" }} />
                     {/* Slogan */}
                     <span className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl font-semibold opacity-70">
-                        Ujyalo: Illuminate Dreams, Illuminate Lives
+                        Diyo: Illuminate Dreams, Illuminate Lives
                     </span>
 
                     {/* Button */}
                     <Link
-                        to={user ? `/create_project` : "/login"}
+                        to={user ? `/${user.name}/my_projects` : "/login"}
                         className="bg-yellow-50 hover:bg-yellow-300 text-gray-600 font-bold py-3 px-6 rounded-lg transition duration-300 absolute bottom-14 left-1/2 transform -translate-x-1/2 opacity-70"
                     >
                         Create Project

@@ -44,7 +44,6 @@ export default function AuthUser() {
 
     const http = axios.create({
         baseURL: "http://127.0.0.1:8000/api",
-        
         headers: {
             "Authorization": `Bearer ${token}`,
             "Content-type": "application/json",
@@ -64,7 +63,7 @@ export default function AuthUser() {
     const khalti = axios.create({
         baseURL: "https://a.khalti.com/api/v2/",
         headers: {
-            "Authorization": "key ef22c99f8697486d828f8dc3ea981fe6",
+            "Authorization": "key 4e5e25b56ae546dc86b4574b9ece7038",
             "Content-type": "application/json",
         }
     })

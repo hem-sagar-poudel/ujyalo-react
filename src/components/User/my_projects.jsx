@@ -9,6 +9,7 @@ export default function User_Projects() {
 
     useEffect(() => {
         http.get(`/user/my_projects/${user.id}`).then((response) => {
+            console.log(response.data.projects);
             setProjects(response.data.projects);
         }).catch((error) => {
             console.error(error);

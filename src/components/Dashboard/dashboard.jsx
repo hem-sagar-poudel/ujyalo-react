@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import AuthUser from "../Authentication/AuthUser";
-//import AdminDashboard from "./admin_dashboard";
+import AdminDashboard from "./admin_dashboard";
 import Home from "../Authentication/home";
 
 export default function Dashboard() {

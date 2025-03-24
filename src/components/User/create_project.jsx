@@ -22,6 +22,7 @@ export default function Project_Creation() {
     const [rewardDescription, setRewardDescription] = useState('');
     const [rewardAmount, setRewardAmount] = useState('');
     const [rewardDelivery, setRewardDelivery] = useState('');
+    const [status, setStatus] = useState('pending');
 
     const types = ["Crowdfund", "Invest"];
 

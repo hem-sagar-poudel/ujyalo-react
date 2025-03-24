@@ -2,19 +2,24 @@ import React, { useState } from 'react';
 import { Route, Routes, Link, useNavigate } from 'react-router-dom';
 import Home from '../Authentication/home';
 import AuthUser from '../Authentication/AuthUser';
+import Project_Creation from '../User/create_project';
+import User_Projects from '../User/my_projects';
+import Project_View from '../Projects/project_view';
+import Project_Edit from '../User/project_edit';
+import Payment_Handling from '../Projects/payment_handling';
 import InvolvedProjects from '../User/involved_projects';
 import Profile from '../User/user_profile';
+import AboutUs from '../Projects/about_us';
+import ProjectsAll from '../Projects/projects_all';
 import { FaUserCircle } from 'react-icons/fa'; // Importing FontAwesome icon
 import Footer from './footer';
-import User_Projects from '../User/my_projects';
-import Project_Creation from '../User/create_project';
 
 export default function UserNav() {
     const { user, token, logout } = AuthUser();
     const navigate = useNavigate();
 
     const logoutUser = () => {
-        if (token !== undefined) {
+        if (token != undefined) {
             logout();
             navigate("/login");
         }
@@ -32,10 +37,10 @@ export default function UserNav() {
                 <div className="flex justify-between items-center py-3">
                     <div>
                         <Link to="/">
-                            <img src={require('./logo.png')} className="w-20 h-auto absolute mb-0 -mt-10" alt="Ujyalo Logo" />
+                            <img src={require('./logo.png')} className="w-20 h-auto absolute mb-0 -mt-10" alt="DIYO Logo" />
                         </Link>
                     </div>
-                    <Link to="/" className="text-3xl text-white block ml-20 mr-1">Ujyalo</Link>
+                    <Link to="/" className="text-3xl text-white block ml-20 mr-1">DIYO</Link>
                     <div className="hidden md:flex items-center space-x-8">
                         {/* Dropdown menu */}
                         <div className="relative group mx-4">
@@ -84,8 +89,13 @@ export default function UserNav() {
                     <Route path="/" element={<Home />} />
                     <Route path="/profile/:id" element={<Profile />} />
                     <Route path="/create_project" element={<Project_Creation />} />
-                    {/* <Route path="/:user/my_project" element={<User_Projects />} /> */}
+                    <Route path="/:user/my_projects" element={<User_Projects />} />
+                    <Route path='/projects/all' element={<ProjectsAll />} />
                     <Route path="/:user/involved_projects" element={<InvolvedProjects />} />
+                    <Route path={`/project/:id`} element={<Project_View />} />
+                    <Route path="/project/:project_id/edit" element={<Project_Edit />} />
+                    <Route path="/payment" element={<Payment_Handling />} />
+                    <Route path='/about_us' element={<AboutUs />} />
                 </Routes>
             </div>
             <Footer />
